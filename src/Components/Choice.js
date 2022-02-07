@@ -2,15 +2,20 @@ import React, { Component } from "react";
 
 export default class Choice extends Component {
   render() {
-    let { name, image } = this.props;
+    let { name, image, setChoice, choosen, text, empty } = this.props;
     return (
       <div className="circle-wrapper">
-        <div className={`outer-circle circle-${name}`}>
-          <div className="inner-circle">
-            <img src={image} alt="choice" />
-          </div>
+        <div
+          className={`outer-circle circle-${name} ${empty && "circle-blank"}`}
+          onClick={() => setChoice(name, image)}
+        >
+          {!empty && (
+            <div className="inner-circle">
+              <img src={image} alt="choice" />
+            </div>
+          )}
         </div>
-        {/* <div className="choice-text">Your Choice</div> */}
+        {choosen && <div className="choice-text">{text}</div>}
       </div>
     );
   }

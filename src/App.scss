@@ -102,6 +102,10 @@ $outer-circle-width: 7rem;
   background: $Scissors-Gradient;
   box-shadow: 0px 3px hsl(39, 70%, 31%);
 }
+.circle-blank {
+  background: #141e37;
+  box-shadow: 0px 0px;
+}
 .inner-circle {
   width: $inner-circle-width;
   height: $inner-circle-width;
@@ -155,7 +159,7 @@ $outer-circle-width: 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color:$Dark-Text
+  color: $Dark-Text;
 }
 .rule-wrapper {
   display: flex;
