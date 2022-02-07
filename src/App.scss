@@ -8,6 +8,9 @@ $Dark-Text: hsl(229, 25%, 31%);
 $Score-Text: hsl(229, 64%, 46%);
 $Header-Outline: hsl(217, 16%, 45%);
 $text-width: 4rem;
+$inner-circle-width: 5rem;
+$outer-circle-width: 7rem;
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +21,7 @@ $text-width: 4rem;
   background: $background;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 .header {
   display: flex;
@@ -50,5 +53,84 @@ $text-width: 4rem;
     font-weight: 700;
     font-size: 1.8rem;
     color: $Dark-Text;
+  }
+}
+.main {
+  margin: 20% auto;
+  background: url(./assets/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+  width: 80vw;
+  height: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-transparent {
+  background: transparent;
+}
+.top-row {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-row {
+  display: flex;
+  justify-content: center;
+}
+.outer-circle {
+  width: $outer-circle-width;
+  height: $outer-circle-width;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  :hover img {
+    scale: 1.1;
+  }
+}
+.circle-rock {
+  background: $Rock-Gradient;
+  box-shadow: 0px 3px hsl(349, 46%, 32%);
+}
+.circle-paper {
+  background: $Paper-Gradient;
+  box-shadow: 0px 3px hsl(230, 41%, 32%);
+}
+.circle-scissors {
+  background: $Scissors-Gradient;
+  box-shadow: 0px 3px hsl(39, 70%, 31%);
+}
+.inner-circle {
+  width: $inner-circle-width;
+  height: $inner-circle-width;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  img {
+    width: 50%;
+  }
+}
+.circle-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.choice-text {
+  margin-top: 15%;
+  text-align: center;
+  color: white;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  .rules {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
   }
 }
