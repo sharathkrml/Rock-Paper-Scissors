@@ -80,12 +80,12 @@ $outer-circle-width: 7rem;
 }
 .bottom-relative {
   position: relative;
-  bottom: 10%;
+  // bottom: 10%;
   // display: ;
 }
 .game-status {
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   text-align: center;
 }
@@ -148,6 +148,7 @@ $outer-circle-width: 7rem;
   margin-top: 15%;
   text-align: center;
   color: white;
+  font-size: .7rem;
 }
 .footer {
   display: flex;
