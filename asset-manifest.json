@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Rock-Paper-Scissors/static/css/main.692ee83c.css",
+    "main.js": "/Rock-Paper-Scissors/static/js/main.770c9770.js",
+    "static/js/787.ccf6e2bb.chunk.js": "/Rock-Paper-Scissors/static/js/787.ccf6e2bb.chunk.js",
+    "static/media/loading.gif": "/Rock-Paper-Scissors/static/media/loading.90aa511c08ad1c5c1ffc.gif",
+    "static/media/logo.svg": "/Rock-Paper-Scissors/static/media/logo.a4a2b39fefcdb6a1a8088c4dba8f3d93.svg",
+    "static/media/image-rules.svg": "/Rock-Paper-Scissors/static/media/image-rules.258b753fb6284dc8ae00c5b2fa7938c0.svg",
+    "static/media/icon-paper.svg": "/Rock-Paper-Scissors/static/media/icon-paper.8b57a6b108c1b8ae82931a39b10f96a2.svg",
+    "index.html": "/Rock-Paper-Scissors/index.html",
+    "static/media/icon-scissors.svg": "/Rock-Paper-Scissors/static/media/icon-scissors.3b1a5d7eb0b2f1fd3e955865ec04d9ed.svg",
+    "static/media/icon-rock.svg": "/Rock-Paper-Scissors/static/media/icon-rock.476e90a9646a87bb3645d2f09f4f7fba.svg",
+    "static/media/icon-close.svg": "/Rock-Paper-Scissors/static/media/icon-close.bde602ecd1a4e55e0c27137ed651e027.svg",
+    "static/media/bg-triangle.svg": "/Rock-Paper-Scissors/static/media/bg-triangle.c0c30b562fdb08766659.svg",
+    "main.692ee83c.css.map": "/Rock-Paper-Scissors/static/css/main.692ee83c.css.map",
+    "main.770c9770.js.map": "/Rock-Paper-Scissors/static/js/main.770c9770.js.map",
+    "787.ccf6e2bb.chunk.js.map": "/Rock-Paper-Scissors/static/js/787.ccf6e2bb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.692ee83c.css",
+    "static/js/main.770c9770.js"
+  ]
+}
