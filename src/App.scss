@@ -78,6 +78,25 @@ $outer-circle-width: 7rem;
   display: flex;
   justify-content: center;
 }
+.bottom-relative {
+  position: relative;
+  bottom: 10%;
+  // display: ;
+}
+.game-status {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+.play-again-btn {
+  margin-top: 5%;
+  background-color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
 .outer-circle {
   width: $outer-circle-width;
   height: $outer-circle-width;
@@ -117,6 +136,9 @@ $outer-circle-width: 7rem;
   img {
     width: 50%;
   }
+}
+.inner-empty {
+  background-color: transparent;
 }
 .circle-wrapper {
   display: flex;

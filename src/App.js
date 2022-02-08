@@ -14,10 +14,16 @@ const CHOICES = [
   { name: "paper", image: paper },
   { name: "scissors", image: scissors },
 ];
+const WIN = [
+  { user: "rock", random: "scissors" },
+  { user: "scissors", random: "paper" },
+  { user: "paper", random: "rock" },
+];
 export default class App extends Component {
   state = {
     showRule: false,
     choosen: false,
+    empty: false,
     userChoice: {
       name: "",
       image: "",
@@ -26,6 +32,8 @@ export default class App extends Component {
       name: "",
       image: "",
     },
+    gameStatus: "",
+    score: 0,
   };
   toggleRule = () => {
     this.setState((prevState) => ({ showRule: !prevState.showRule }));
@@ -40,14 +48,56 @@ export default class App extends Component {
       userChoice: userChoice,
       randomChoice: CHOICES[index],
       choosen: true,
+      empty: true,
+    });
+  };
+  resetSelection = () => {
+    this.setState({
+      choosen: false,
+      empty: false,
+      gameStatus: "",
     });
   };
   componentDidMount() {
     document.title = "Rock Paper Scissors";
   }
+  componentDidUpdate() {
+    const { userChoice, randomChoice, empty } = this.state;
+    if (empty) {
+      setTimeout(() => {
+        if (userChoice.name === randomChoice.name) {
+          this.setState({ empty: false, gameStatus: "DRAW MATCH" });
+        } else {
+          WIN.forEach((win) => {
+            if (win.user === userChoice.name) {
+              if (win.random === randomChoice.name) {
+                console.log("won!!!!");
+                this.setState((prevState) => ({
+                  empty: false,
+                  gameStatus: "YOU WON",
+                  score: prevState.score + 1,
+                }));
+              } else {
+                this.setState({ empty: false, gameStatus: "YOU LOST" });
+              }
+            }
+          });
+        }
+      }, 1000);
+    }
+  }
 
   render() {
-    const { showRule, choosen, userChoice, randomChoice } = this.state;
+    const {
+      showRule,
+      choosen,
+      userChoice,
+      randomChoice,
+      empty,
+      gameStatus,
+      score,
+    } = this.state;
+    console.log(score);
     return (
       <div className="App">
         {showRule && (
@@ -78,7 +128,7 @@ export default class App extends Component {
           <img src={logo} alt="logo" />
           <div className="score-card">
             <div className="score-title">SCORE</div>
-            <div className="score-value">12</div>
+            <div className="score-value">{score}</div>
           </div>
         </header>
         {/* main-transparent */}
@@ -108,7 +158,7 @@ export default class App extends Component {
                 setChoice={this.setChoice}
                 choosen={choosen}
                 text="THE HOUSE PICKED"
-                // empty
+                empty={empty}
               />
             ) : (
               <Choice
@@ -120,7 +170,18 @@ export default class App extends Component {
               />
             )}
           </div>
-          {!choosen && (
+          {choosen ? (
+            <div className="bottom-row bottom-relative">
+              <div className="status">
+                <div className="game-status">{gameStatus}</div>
+                {!empty && (
+                  <div onClick={this.resetSelection} className="play-again-btn">
+                    PLAY AGAIN
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : (
             <div className="bottom-row">
               <Choice
                 name="rock"
